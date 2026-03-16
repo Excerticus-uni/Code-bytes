@@ -1,0 +1,1978 @@
+__________________________________________________________________________________________________________________
+Variables
+_______________________________________________________________________________________________________________________________________
+
+Naming Convention       Example Format      When to use?          Example in Python:
+________________________________________________________________________________________
+Snake case             snake_case         Defining variables         my_var = 12
+
+Snake case             snake_case         Defining functions        def my_func():
+
+Pascal case            PascalCase          Defining classes         class MyClass:
+
+Upper case             UPPER_CASE         Defining constants      MY_CONSTANT = 3.14
+(Upper snake case)
+________________________________________________________________________________________
+
+
+Creating Variables
+__________________
+
+
+    Example:
+
+            x = 5
+            y = "John"
+            print(x)
+            print(y)
+
+            
+Variables do not need to be declared with type, can change type after.
+
+    Example:
+
+            x = 4       # x is of type int
+            x = "Sally" # x is now of type str
+            print(x)
+
+Casting
+_______
+
+
+If you want to specify the data type of a variable, this can be done with casting.
+
+    Example:
+
+            x = str(3)    # x will be '3'
+            y = int(3)    # y will be 3
+            z = float(3)  # z will be 3.0
+
+
+            
+Many Values to Multiple Variables
+_________________________________
+
+
+    Example:
+
+            x, y, z = "Orange", "Banana", "Cherry"
+            print(x)
+            print(y)
+            print(z)
+
+
+One Value to Multiple Variables
+_______________________________
+
+
+    Example:
+
+            x = y = z = "Orange"
+            print(x)
+            print(y)
+            print(z)
+
+
+Unpack a Collection
+___________________
+
+
+
+    Example:
+
+            fruits = ["apple", "banana", "cherry"]
+            x, y, z = fruits
+            print(x)
+            print(y)
+            print(z)
+
+
+Get the Type
+____________
+
+
+You can get the data type of a variable with the type() function.
+
+    Example:
+
+            x = 5
+            y = "John"
+            print(type(x))
+            print(type(y))
+
+
+Single or Double Quotes?
+________________________
+
+
+String variables can be declared either by using single or double quotes:
+
+    Example:    
+
+            x = "John"
+            # is the same as
+            x = 'John'
+
+
+Case-Sensitive
+______________
+
+
+Variable names are case-sensitive.
+
+    Example:
+
+            a = 4
+            A = "Sally"
+            #A will not overwrite a
+
+            
+Output Variables
+________________
+
+
+    Example:
+
+            x = "Python is awesome"
+            print(x)
+
+
+
+    Example:
+
+            x = "Python"
+            y = "is"
+            z = "awesome"
+            print(x, y, z)
+
+The + operator
+______________
+
+
+    Example:
+
+            x = "Python "
+            y = "is "
+            z = "awesome"
+            print(x + y + z)
+
+
+For numbers, the + character works as a mathematical operator:
+
+    Example:
+
+            x = 5
+            y = 10
+            print(x + y)
+
+
+Best way to output multiple variables in print() is with commas
+_______________________________________________________________
+
+    Example:
+
+            x = 5
+            y = "John"
+            print(x, y)
+
+
+            
+_______________________________________________________________________________________________________________________________________
+Global Variables
+_______________________________________________________________________________________________________________________________________
+
+
+
+Variables created outside of a function are global variables.
+Global variables can be used both in functions and outside.
+
+    Example:
+
+            x = "awesome"
+
+            def myfunc():
+                print("Python is " + x)
+
+            myfunc()
+
+
+Create a variable with same name inside function, variable is local, and can only be used inside function. 
+Global variable with same name will remain global and with the original value.
+
+
+    Example:
+
+            x = "awesome"
+
+            def myfunc():
+                x = "fantastic"
+                print("Python is " + x)
+
+            myfunc()
+            print("Python is " + x)
+
+            
+The global Keyword
+__________________
+
+
+To create a global variable inside a function, you can use the global keyword.
+
+    Example:
+
+            def myfunc():
+                global x
+                x = "fantastic"
+
+            myfunc()
+            print("Python is " + x)
+
+
+Also, use the global keyword if you want to change a global variable inside a function.
+
+Example:
+
+            x = "awesome"
+
+            def myfunc():
+                global x
+                x = "fantastic"
+
+            myfunc()
+            print("Python is " + x)
+
+            
+_______________________________________________________________________________________________________________________________________
+Data Types
+_______________________________________________________________________________________________________________________________________     
+
+
+
+Python has the following data types built-in by default, in these categories:
+
+Text Type:	        str
+Numeric Types:	    int, float, complex
+Sequence Types:	    list, tuple, range
+Mapping Type:	    dict
+Set Types:	        set, frozenset
+Boolean Type:	    bool
+Binary Types:	    bytes, bytearray, memoryview
+None Type:	        NoneType
+
+
+Getting the Data Type
+_____________________
+
+
+You can get the data type of any object by using the type() function:
+
+    Example:
+
+            x = 5
+            print(type(x))
+
+
+Setting the Data Type
+_____________________
+
+
+In Python, the data type is set when you assign a value to a variable:
+
+    Example	                                        Data Type	
+_______________________________________________________________
+x = "Hello World"	                                str	
+_______________________________________________________________
+x = 20	                                            int	
+_______________________________________________________________
+x = 20.5	                                        float	
+_______________________________________________________________
+x = 1j	                                            complex	
+_______________________________________________________________
+x = ["apple", "banana", "cherry"]	                list	
+_______________________________________________________________
+x = ("apple", "banana", "cherry")	                tuple	
+_______________________________________________________________
+x = range(6)	                                    range	
+_______________________________________________________________
+x = {"name" : "John", "age" : 36}	                dict	
+_______________________________________________________________
+x = {"apple", "banana", "cherry"}	                set	
+_______________________________________________________________
+x = frozenset({"apple", "banana", "cherry"})	    frozenset	
+_______________________________________________________________
+x = True	                                        bool	
+_______________________________________________________________
+x = b"Hello"	                                    bytes	
+_______________________________________________________________
+x = bytearray(5)	                                bytearray	
+_______________________________________________________________
+x = memoryview(bytes(5))	                        memoryview	
+_______________________________________________________________
+x = None	                                        NoneType	
+_______________________________________________________________
+
+
+
+Setting the Specific Data Type
+______________________________
+
+
+If you want to specify the data type, you can use the following constructor functions:
+
+    Example	                                        Data Type
+_______________________________________________________________
+x = str("Hello World")	                            str	
+_______________________________________________________________
+x = int(20)	                                        int	
+_______________________________________________________________
+x = float(20.5)	                                    float	
+_______________________________________________________________
+x = complex(1j)	                                    complex	
+_______________________________________________________________
+x = list(("apple", "banana", "cherry"))	            list	
+_______________________________________________________________
+x = tuple(("apple", "banana", "cherry"))	        tuple	
+_______________________________________________________________
+x = range(6)	                                    range	
+_______________________________________________________________
+x = dict(name="John", age=36)	                    dict	
+_______________________________________________________________
+x = set(("apple", "banana", "cherry"))	            set	
+_______________________________________________________________
+x = frozenset(("apple", "banana", "cherry"))	    frozenset	
+_______________________________________________________________
+x = bool(5)	                                        bool	
+_______________________________________________________________
+x = bytes(5)	                                    bytes	
+_______________________________________________________________
+x = bytearray(5)	                                bytearray	
+_______________________________________________________________
+x = memoryview(bytes(5))	                        memoryview
+_______________________________________________________________     
+
+
+
+_______________________________________________________________________________________________________________________________________
+Python Numbers
+_______________________________________________________________________________________________________________________________________
+
+
+There are three numeric types in Python:
+
+    int
+    float
+    complex
+
+
+Variables of numeric types are created when you assign a value to them:
+
+    Example:
+
+            x = 1    # int
+            y = 2.8  # float
+            z = 1j   # complex
+
+To verify the type of any object in Python, use the type() function:
+
+    Example:
+
+            print(type(x))
+            print(type(y))
+            print(type(z))
+
+
+ Int
+_____
+
+
+Int, or integer, is a whole number, positive or negative, without decimals, of unlimited length.
+
+    Example:
+
+            x = 1
+            y = 35656222554887711
+            z = -3255522
+
+            print(type(x))
+            print(type(y))
+            print(type(z))
+
+
+Float
+_____
+
+
+Float, or "floating point number" is a number, positive or negative, containing one or more decimals.
+
+    Example:
+
+            x = 1.10
+            y = 1.0
+            z = -35.59
+
+            print(type(x))
+            print(type(y))
+            print(type(z))
+
+
+Float can also be scientific numbers with an "e" to indicate the power of 10.
+
+    Example:
+
+            x = 35e3
+            y = 12E4
+            z = -87.7e100
+
+            print(type(x))
+            print(type(y))
+            print(type(z))
+
+
+Complex
+_______
+
+
+Complex numbers are written with a "j" as the imaginary part:
+
+    Example:
+
+            x = 3+5j
+            y = 5j
+            z = -5j
+
+            print(type(x))
+            print(type(y))
+            print(type(z))
+
+
+Type Conversion
+_______________
+
+
+You can convert from one type to another with the int(), float(), and complex() methods:
+
+Note: You cannot convert complex numbers into another number type.
+
+    Example:
+
+            x = 1    # int
+            y = 2.8  # float
+            z = 1j   # complex
+
+            #convert from int to float:
+            a = float(x)
+
+            #convert from float to int:
+            b = int(y)
+
+            #convert from int to complex:
+            c = complex(x)
+
+            print(a)
+            print(b)
+            print(c)
+
+            print(type(a))
+            print(type(b))
+            print(type(c))
+
+
+Random Number
+_____________
+
+
+Python does not have a random() function to make a random number, but Python has a built-in module called random that can be used to make random numbers:
+
+    Example:
+
+            import random
+            print(random.randrange(1, 10))
+
+
+_______________________________________________________________________________________________________________________________________
+String Handling
+_______________________________________________________________________________________________________________________________________           
+
+
+Strings in python surrounded by either single quotations, or double quotations.
+
+'hello' is the same as "hello".
+
+You can display a string literal with the print() function:
+
+    Example:
+
+        print("Hello")
+        print('Hello')
+
+
+Quotes Inside Quotes
+____________________
+
+
+You can use quotes inside a string, as long as they don't match the quotes surrounding the string:
+
+    Example:
+
+            print("It's alright")
+            print("He is called 'Johnny'")
+            print('He is called "Johnny"')
+
+
+Assign String to a Variable
+___________________________
+
+
+Assigning a string to a variable is done with the variable name followed by an equal sign and the string:
+
+    Example:
+
+            a = "Hello"
+            print(a)
+
+
+Multiline Strings
+_________________
+
+
+You can assign a multiline string to a variable by using three double quotes, Or three single quotes:
+
+    Example:
+
+            a = """Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt
+            ut labore et dolore magna aliqua."""
+
+            print(a)
+_______________________________________________________________________________________________________________________________________
+Slicing Strings
+_______________________________________________________________________________________________________________________________________
+
+
+You can return a range of characters by using the slice syntax.
+Specify the start index(inclusive) and the end index(exclusive).
+
+Note: The first character has index 0.
+
+
+    Example:
+
+            b = "Hello, World!"
+            print(b[2:5])
+
+
+Slice From the Start
+____________________
+
+
+By leaving out the start index, the range will start at the first character:
+
+    Example:
+
+            b = "Hello, World!"
+            print(b[:5])
+
+
+Slice To the End
+________________
+
+
+By leaving out the end index, the range will go to the end:
+
+    Example:
+
+            b = "Hello, World!"
+            print(b[2:])
+
+
+Negative Indexing
+_________________
+
+
+Use negative indexes to start the slice from the end of the string:
+
+    Example:
+
+            b = "Hello, World!"
+            print(b[-5:-2])
+
+From: "o" in "World!" (position -5)
+To, but not included: "d" in "World!" (position -2):
+
+_______________________________________________________________________________________________________________________________________
+Modify Strings
+_______________________________________________________________________________________________________________________________________
+
+
+Upper Case
+__________
+
+
+The upper() method returns the string in upper case:
+
+    Example:
+
+            a = "Hello, World!"
+            print(a.upper())
+
+
+Lower Case
+__________
+
+
+The lower() method returns the string in lower case:
+
+    Example:
+
+            a = "Hello, World!"
+            print(a.lower())
+
+
+Remove Whitespace
+_________________
+
+
+Whitespace is the space before and/or after the actual text, and very often you want to remove this space.
+The strip() method removes any whitespace from the beginning or the end:
+
+    Example:
+
+            a = " Hello, World! "
+            print(a.strip()) # returns "Hello, World!"
+
+
+Replace String
+______________
+
+
+The replace() method replaces a string with another string:
+
+    Example:
+
+            a = "Hello, World!"
+            print(a.replace("H", "J"))
+            
+
+Split String
+____________
+
+
+The split() method returns a list where the text between the specified separator becomes the list items.
+
+    Example:
+
+            a = "Hello, World!"
+            print(a.split(",")) # returns ['Hello', ' World!']
+
+            
+String Concatenation
+____________________
+
+
+To concatenate, or combine, two strings you can use the + operator.
+
+Merge variable a with variable b into variable c:
+
+    Example:
+
+
+
+            a = "Hello"
+            b = "World"
+            c = a + b
+            print(c)
+
+To add a space between them, add a " ":
+
+    Example:
+
+            a = "Hello"
+            b = "World"
+            c = a + " " + b
+            print(c)
+
+
+_______________________________________________________________________________________________________________________________________
+String Formatting
+_______________________________________________________________________________________________________________________________________
+
+
+As we learned in the Python Variables chapter, we cannot combine strings and numbers like this:
+
+    Example:
+
+            age = 36
+            #This will produce an error:
+            txt = "My name is John, I am " + age
+            print(txt)
+
+
+F-Strings
+_________
+
+But we can combine strings and numbers by using f-strings or the format() method!
+F-String was introduced in Python 3.6, and is now the preferred way of formatting strings.
+To specify a string as an f-string, simply put an f in front of the string literal, and add curly brackets {} as placeholders for variables and other operations.
+
+
+Create an f-string:
+
+    Example:
+
+            age = 36
+            txt = f"My name is John, I am {age}"
+            print(txt)
+
+
+Placeholders and Modifiers
+__________________________
+
+
+A placeholder can contain variables, operations, functions, and modifiers to format the value.
+
+    Example:
+
+            price = 59
+            txt = f"The price is {price} dollars"
+            print(txt)
+
+
+Modifier
+________
+
+
+A placeholder can include a modifier to format the value.
+A modifier is included by adding a colon : followed by a legal formatting type, like .2f which means fixed point number with 2 decimals:
+
+    Example:
+
+            #Display the price with 2 decimals.
+            price = 59
+            txt = f"The price is {price:.2f} dollars"
+            print(txt)
+
+A placeholder can contain Python code, like math operations:
+
+    Example:
+
+            #Perform a math operation in the placeholder.
+
+            txt = f"The price is {20 * 59} dollars"
+            print(txt)
+
+
+
+
+
+_______________________________________________________________________________________________________________________________________
+Escape Characters
+_______________________________________________________________________________________________________________________________________
+
+
+An escape character is a backslash \ followed by the character you want to insert.
+An example of an illegal character is a double quote inside a string that is surrounded by double quotes:
+
+
+    Example:
+
+            txt = "We are the so-called "Vikings" from the north."
+
+            
+You will get an error if you use double quotes inside a string that is surrounded by double quotes:
+To fix this problem, use the escape character \":
+
+
+    Example:
+
+            txt = "We are the so-called \"Vikings\" from the north."
+
+
+The escape character allows you to use double quotes when you normally would not be allowed:
+
+Escape Characters
+_________________
+
+
+Other escape characters used in Python:
+
+Code	       Result	
+____________________________
+\'	        Single Quote	
+____________________________
+\\	        Backslash	
+____________________________
+\n	        New Line	
+____________________________
+\r	        Carriage Return	
+____________________________
+\t	        Tab	
+____________________________
+\b	        Backspace	
+____________________________
+\f	        Form Feed	
+____________________________
+\ooo	    Octal value	
+____________________________
+\xhh	    Hex value
+____________________________
+
+
+_______________________________________________________________________________________________________________________________________
+String Methods
+_______________________________________________________________________________________________________________________________________
+
+
+Python has a set of built-in methods that you can use on strings.
+Note: All string methods return new values. They do not change the original string.
+
+______________________________________________________________________________________________________________________
+Method	                    Description
+______________________________________________________________________________________________________________________
+capitalize()	            Converts the first character to upper case
+______________________________________________________________________________________________________________________
+casefold()	                Converts string into lower case
+______________________________________________________________________________________________________________________
+center()	                Returns a centered string
+______________________________________________________________________________________________________________________
+count()	                    Returns the number of times a specified value occurs in a string
+______________________________________________________________________________________________________________________
+encode()	                Returns an encoded version of the string
+______________________________________________________________________________________________________________________
+endswith()	                Returns true if the string ends with the specified value
+______________________________________________________________________________________________________________________
+expandtabs()	            Sets the tab size of the string
+______________________________________________________________________________________________________________________
+find()	                    Searches the string for a specified value and returns the position of where it was found
+______________________________________________________________________________________________________________________
+format()	                Formats specified values in a string
+______________________________________________________________________________________________________________________
+format_map()	            Formats specified values in a string
+______________________________________________________________________________________________________________________
+index()	                    Searches the string for a specified value and returns the position of where it was found
+______________________________________________________________________________________________________________________
+isalnum()	                Returns True if all characters in the string are alphanumeric
+______________________________________________________________________________________________________________________
+isalpha()	                Returns True if all characters in the string are in the alphabet
+______________________________________________________________________________________________________________________
+isascii()	                Returns True if all characters in the string are ascii characters
+______________________________________________________________________________________________________________________
+isdecimal()	                Returns True if all characters in the string are decimals
+______________________________________________________________________________________________________________________
+isdigit()	                Returns True if all characters in the string are digits
+______________________________________________________________________________________________________________________
+visidentifier()	            Returns True if the string is an identifier
+______________________________________________________________________________________________________________________
+islower()	                Returns True if all characters in the string are lower case
+______________________________________________________________________________________________________________________
+isnumeric()	                Returns True if all characters in the string are numeric
+______________________________________________________________________________________________________________________
+isprintable()	            Returns True if all characters in the string are printable
+______________________________________________________________________________________________________________________
+isspace()	                Returns True if all characters in the string are whitespaces
+______________________________________________________________________________________________________________________
+istitle()	                Returns True if the string follows the rules of a title
+______________________________________________________________________________________________________________________
+isupper()	                Returns True if all characters in the string are upper case
+______________________________________________________________________________________________________________________
+join()	                    Joins the elements of an iterable to the end of the string
+______________________________________________________________________________________________________________________
+ljust()	                    Returns a left justified version of the string
+______________________________________________________________________________________________________________________
+lower()	                    Converts a string into lower case
+______________________________________________________________________________________________________________________
+lstrip()	                Returns a left trim version of the string
+______________________________________________________________________________________________________________________
+maketrans()	                Returns a translation table to be used in translations
+______________________________________________________________________________________________________________________
+partition()	                Returns a tuple where the string is parted into three parts
+______________________________________________________________________________________________________________________
+replace()	                Returns a string where a specified value is replaced with a specified value
+______________________________________________________________________________________________________________________
+rfind()	                    Searches the string for a specified value and returns the last position of where it was found
+______________________________________________________________________________________________________________________
+rindex()	                Searches the string for a specified value and returns the last position of where it was found
+______________________________________________________________________________________________________________________
+rjust()	                    Returns a right justified version of the string
+______________________________________________________________________________________________________________________
+rpartition()	            Returns a tuple where the string is parted into three parts
+______________________________________________________________________________________________________________________
+rsplit()	                Splits the string at the specified separator, and returns a list
+______________________________________________________________________________________________________________________
+rstrip()	                Returns a right trim version of the string
+______________________________________________________________________________________________________________________
+split()	                    Splits the string at the specified separator, and returns a list
+______________________________________________________________________________________________________________________
+splitlines()	            Splits the string at line breaks and returns a list
+______________________________________________________________________________________________________________________
+startswith()	            Returns true if the string starts with the specified value
+______________________________________________________________________________________________________________________
+strip()	                    Returns a trimmed version of the string
+______________________________________________________________________________________________________________________
+swapcase()	                Swaps cases, lower case becomes upper case and vice versa
+______________________________________________________________________________________________________________________
+title()	                    Converts the first character of each word to upper case
+______________________________________________________________________________________________________________________
+translate()	                Returns a translated string
+______________________________________________________________________________________________________________________
+upper()	                    Converts a string into upper case
+______________________________________________________________________________________________________________________
+zfill()	                    Fills the string with a specified number of 0 values at the beginning
+______________________________________________________________________________________________________________________
+
+
+
+
+
+
+_______________________________________________________________________________________________________________________________________
+Boolean Values
+_______________________________________________________________________________________________________________________________________
+
+
+When you compare two values, the expression is evaluated and Python returns the Boolean answer:
+
+    Example:
+
+            print(10 > 9)
+            print(10 == 9)
+            print(10 < 9)
+
+
+When you run a condition in an if statement, Python returns True or False:
+
+    Example:
+
+            a = 200
+            b = 33
+
+            if b > a:
+            print("b is greater than a")
+            else:
+            print("b is not greater than a")
+
+
+Evaluate Values and Variables
+_____________________________
+
+
+The bool() function allows you to evaluate any value, and give you True or False in return,
+
+    Example:
+
+            #Evaluate a string and a number.
+            print(bool("Hello"))
+            print(bool(15))
+
+
+    Example:
+
+            #Evaluate two variables.
+            x = "Hello"
+            y = 15
+
+            print(bool(x))
+            print(bool(y))
+
+
+
+Most Values are True
+____________________
+
+
+
+Any string is True, except empty strings.
+Any number is True, except 0.
+Any list, tuple, set, and dictionary are True, except empty ones.
+
+    Example:
+
+            #The following will return True.
+            bool("abc")
+            bool(123)
+            bool(["apple", "cherry", "banana"])
+
+
+Some Values are False
+_____________________
+
+
+There are not many values that evaluate to False, except empty values, such as (), [], {}, "", 0, None, and False.
+
+    Example:
+
+            #The following will return False.
+            bool(False)
+            bool(None)
+            bool(0)
+            bool("")
+            bool(())
+            bool([])
+            bool({})
+
+
+One more value or object evaluates to False, that is if object is made with a __len__ function that returns 0 or False:
+
+    Example:
+
+            class myclass():
+            def __len__(self):
+                return 0
+
+            myobj = myclass()
+            print(bool(myobj))
+
+
+Functions can Return a Boolean
+______________________________
+
+
+You can create functions that returns a Boolean Value:
+
+    Example:
+
+            #Print the answer of a function.
+            def myFunction() :
+                return True
+
+            print(myFunction())
+
+
+You can execute code based on the Boolean answer of a function:
+
+    Example:
+
+            #Print "YES!" if the function returns True, otherwise print "NO!".
+
+            def myFunction() :
+                return True
+
+            if myFunction():
+                print("YES!")
+            else:
+                print("NO!")
+
+
+Many built-in functions return a boolean value, like isinstance() , which is used to determine if an object is a certain data type:
+
+    Example:
+
+            #Check if an object is an integer or not.
+            x = 200
+            print(isinstance(x, int))
+
+            
+_______________________________________________________________________________________________________________________________________
+Operators
+_______________________________________________________________________________________________________________________________________
+
+
+Python divides the operators in the following groups:
+
+
+- Arithmetic operators
+
+- Assignment operators
+
+- Comparison operators
+
+- Logical operators
+
+- Identity operators
+
+- Membership operators
+
+- Bitwise operators
+
+
+
+
+
+
+Python Arithmetic Operators
+___________________________
+
+
+Arithmetic operators are used with numeric values to perform common mathematical operations:
+
+Operator	    Name	            Example	
+_____________________________________________
++	            Addition	        x + y
+_____________________________________________	
+-	            Subtraction	        x - y
+_____________________________________________
+*	            Multiplication	    x * y
+_____________________________________________
+/	            Division	        x / y	
+_____________________________________________
+%	            Modulus	            x % y	
+_____________________________________________
+**	            Exponentiation	    x ** y	
+_____________________________________________
+//	            Floor division	    x // y	
+_____________________________________________
+
+
+
+
+
+
+
+Python Assignment Operators
+___________________________
+
+
+Assignment operators are used to assign values to variables:
+
+Operator	        Example	        Same As	
+________________________________________________
+=	                x = 5	        x = 5	
+________________________________________________
++=	                x += 3	        x = x + 3	
+________________________________________________
+-=	                x -= 3	        x = x - 3	
+________________________________________________
+*=	                x *= 3	        x = x * 3	
+________________________________________________
+/=	                x /= 3	        x = x / 3	
+________________________________________________
+%=	                x %= 3	        x = x % 3	
+________________________________________________
+//=	                x //= 3	        x = x // 3	
+________________________________________________
+**=	                x **= 3	        x = x ** 3	
+________________________________________________
+&=	                x &= 3	        x = x & 3	
+________________________________________________
+|=	                x |= 3	        x = x | 3	
+________________________________________________
+^=	                x ^= 3	        x = x ^ 3	
+________________________________________________
+>>=	                x >>= 3	        x = x >> 3	
+________________________________________________
+<<=	                x <<= 3	        x = x << 3	
+________________________________________________
+:=	                print(x := 3)	x = 3
+                                    print(x)	
+________________________________________________
+
+
+
+
+
+
+
+
+Python Comparison Operators
+___________________________
+
+
+Comparison operators are used to compare two values:
+
+Operator	    Name	                    Example
+_____________________________________________________
+==	            Equal	                    x == y	
+_____________________________________________________
+!=	            Not equal	                x != y	
+_____________________________________________________
+>	            Greater than	            x > y	
+_____________________________________________________
+<	            Less than	                x < y	
+_____________________________________________________
+>=	            Greater than or equal to	x >= y	
+_____________________________________________________
+<=              Less than or equal to	    x <= y	
+_____________________________________________________
+
+
+
+Python Logical Operators
+________________________
+
+
+
+Logical operators are used to combine conditional statements:
+
+Operator	        Description	                Example	
+______________________________________________________________________
+and 	        Returns True if both 	        x < 5 and  x < 10	
+                statements are true
+______________________________________________________________________
+or	            Returns True if one of 	        x < 5 or x < 4	
+                the statements is true  
+______________________________________________________________________
+not	            Reverse the result, returns     not(x < 5 and x < 10)	
+                False if the result is true
+______________________________________________________________________
+
+
+
+Python Identity Operators
+_________________________
+
+
+Identity operators are used to compare the objects, not if they are equal, 
+but if they are actually the same object, with the same memory location:
+
+
+Operator	         Description	                  Example
+___________________________________________________________________
+is 	            Returns True if both variables        x is y	
+                      are the same object
+___________________________________________________________________
+is not	        Returns True if both variables        x is not y
+                    are not the same object
+___________________________________________________________________
+
+
+
+Python Membership Operators
+___________________________
+
+
+Membership operators are used to test if a sequence is presented in an object:
+
+Operator	                          Description	                     Example
+_____________________________________________________________________________________
+in 	                Returns True if a sequence with the	 specified       x in y	
+                            value is present in the object
+_____________________________________________________________________________________
+not in	            Returns True if a sequence with the specified	     x not in y	
+                            value is not present in the object
+_____________________________________________________________________________________
+
+
+
+
+
+Python Bitwise Operators
+________________________
+
+
+Bitwise operators are used to compare (binary) numbers:
+
+Operator	Name	                Description	                        Example	
+___________________________________________________________________________________
+& 	        AND	                    Sets each bit to 1 if	            x & y	
+                                    both bits are 1
+___________________________________________________________________________________
+|	        OR	                    Sets each bit to 1 if 	            x | y	
+                                    one of two bits is 1    
+___________________________________________________________________________________
+^	        XOR	                    Sets each bit to 1 if only          x ^ y
+                                      on of the two bits is 1
+___________________________________________________________________________________
+~	        NOT	                    Inverts all the bits	~x	
+
+___________________________________________________________________________________
+<<	        Zero fill left shift	Shift left by pushing zeros in      x << 2	
+                                      from the right and let the 
+                                        leftmost bits fall off
+___________________________________________________________________________________
+>>	        Signed right shift	    Shift right by pushing copies of 	x >> 2	
+                                    the leftmost bits in from the left, 
+                                    and let the rightmost bits fall off
+___________________________________________________________________________________
+
+
+
+Operator Precedence
+___________________
+
+
+Operator precedence describes the order in which operations are performed.
+
+
+Parentheses has highest precedence, expressions inside parentheses evaluated first.
+
+    Example:
+
+            Parentheses has highest precedence, expressions inside parentheses evaluated first.
+            print((6 + 3) - (6 + 3))
+
+
+Multiplication * has higher precedence than addition +, and therefore multiplications are evaluated before additions:
+
+    Example:
+
+            print(100 + 5 * 3)
+
+
+The precedence order is described in the table below, starting with the highest precedence at the top:
+
+Operator	    Description	
+_____________________________________________________________
+()	            Parentheses	
+_____________________________________________________________
+**	            Exponentiation	
+_____________________________________________________________
++x  -x  ~x	    Unary plus, unary minus, 
+                    and bitwise NOT
+_____________________________________________________________
+*  /  //  %	    Multiplication, division, 
+                floor division, and modulus
+_____________________________________________________________
++  -	        Addition and subtraction	
+_____________________________________________________________
+<<  >>	        Bitwise left and right shifts
+_____________________________________________________________
+&	            Bitwise AND	
+_____________________________________________________________
+^	            Bitwise XOR	
+_____________________________________________________________
+|	            Bitwise OR	
+_____________________________________________________________
+==  !=  >           
+>=  <  <=       Comparisons, identity,
+is  is not      and membership operators	
+in  not in 	
+_____________________________________________________________
+not	            Logical NOT	
+and	            AND	
+or	            OR	
+_____________________________________________________________
+
+
+
+If two operators have the same precedence, the expression is evaluated from left to right.
+
+
+Addition (+) and subtraction (-) has the same precedence.
+
+    Example:
+
+            print(5 + 4 - 7 + 3)
+
+
+
+
+_______________________________________________________________________________________________________________________________________
+OOP EXAMPLE BASIC
+_______________________________________________________________________________________________________________________________________
+
+class Parrot:
+
+    # class attribute
+    name = ""
+    age = 0
+
+# create parrot1 object
+parrot1 = Parrot()
+parrot1.name = "Blu"
+parrot1.age = 10
+
+# create another object parrot2
+parrot2 = Parrot()
+parrot2.name = "Woo"
+parrot2.age = 15
+
+# access attributes
+print(f"{parrot1.name} is {parrot1.age} years old")
+print(f"{parrot2.name} is {parrot2.age} years old")
+
+_______________________________________________________________________________________________________________________________________
+OOP INHERITANCE EXAMPLE BASIC
+_______________________________________________________________________________________________________________________________________
+
+# base class
+class Animal:
+    
+    def eat(self):
+        print( "I can eat!")
+    
+    def sleep(self):
+        print("I can sleep!")
+
+# derived class
+class Dog(Animal):
+    
+    def bark(self):
+        print("I can bark! Woof woof!!")
+
+# Create object of the Dog class
+dog1 = Dog()
+
+# Calling members of the base class
+dog1.eat()
+dog1.sleep()
+
+# Calling member of the derived class
+dog1.bark();
+_______________________________________________________________________________________________________________________________________
+OOP ENCAPSULATION BASIC
+_______________________________________________________________________________________________________________________________________
+
+class Computer:
+
+    def __init__(self):
+        self.__maxprice = 900
+
+    def sell(self):
+        print("Selling Price: {}".format(self.__maxprice))
+
+    def setMaxPrice(self, price):
+        self.__maxprice = price
+
+c = Computer()
+c.sell()
+
+# change the price
+c.__maxprice = 1000
+c.sell()
+
+# using setter function
+c.setMaxPrice(1000)
+c.sell()
+
+_______________________________________________________________________________________________________________________________________
+OOP POLYMORPHISM EXAMPLE BASIC
+_______________________________________________________________________________________________________________________________________
+
+class Polygon:
+    # method to render a shape
+    def render(self):
+        print("Rendering Polygon...")
+
+class Square(Polygon):
+    # renders Square
+    def render(self):
+        print("Rendering Square...")
+
+class Circle(Polygon):
+    # renders circle
+    def render(self):
+        print("Rendering Circle...")
+    
+# create an object of Square
+s1 = Square()
+s1.render()
+
+# create an object of Circle
+c1 = Circle()
+c1.render()
+
+_______________________________________________________________________________________________________________________________________
+MAKING CUSTOM MODULES
+_______________________________________________________________________________________________________________________________________
+                
+
+Create a Module:
+________________
+
+
+To create a module just save the code you want in a file with the file extension .py:
+
+    Example:
+            #Save this code in a file named mymodule.py
+
+            def greeting(name):
+            print("Hello, " + name)
+
+
+USE A MODULE:
+_____________
+
+
+Now we can use the module we just created, by using the import statement:
+
+    Example:
+            #Import the module named mymodule, and call the greeting function:
+
+            import mymodule
+
+            mymodule.greeting("Jonathan")
+
+            
+
+Variables in Module:
+____________________
+
+
+The module can contain functions, as already described, but also variables of all types (arrays, dictionaries, objects etc):
+
+    Example:
+            #Save this code in the file mymodule.py
+
+            person1 = {
+                "name": "John",
+                "age": 36,
+                "country": "Norway"
+            }
+
+
+    Example:
+            #Import the module named mymodule, and access the person1 dictionary:
+
+            import mymodule
+
+            a = mymodule.person1["age"]
+            print(a)
+
+_______________________________________________________________________________________________________________________________________
+EXCEPTION HANDLING
+_______________________________________________________________________________________________________________________________________
+
+    The try block lets you test a block of code for errors.
+
+    The except block lets you handle the error.
+
+    The else block lets you execute code when there is no error.
+
+    The finally block lets you execute code, regardless of the result of the try- and except blocks.
+
+    
+    MULTIPLE EXCEPTIONS:
+    Example
+            #Print one message if the try block raises a NameError and another for other errors:
+
+            try:
+                print(x)
+            except NameError:
+                print("Variable x is not defined")
+            except:
+                print("Something else went wrong")
+
+    FINALLY:  
+    Example
+            #Try to open and write to a file that is not writable:
+
+            try:
+                f = open("demofile.txt")
+                try:
+                    f.write("Lorum Ipsum")
+                except:
+                    print("Something went wrong when writing to the file")
+                finally:
+                    f.close()
+            except:
+            print("Something went wrong when opening the file")
+
+    RAISE AN EXCEPTION:
+    Example:
+            #Raise an error and stop the program if x is lower than 0:
+
+            x = -1
+
+            if x < 0:
+                raise Exception("Sorry, no numbers below zero")
+
+    Example
+            #Raise a TypeError if x is not an integer:
+
+            x = "hello"
+
+            if not type(x) is int:
+                raise TypeError("Only integers are allowed")
+
+_______________________________________________________________________________________________________________________________________
+NONETYPE
+_______________________________________________________________________________________________________________________________________
+
+Its data type is NoneType, and None is the only instance of a NoneType object.
+
+NoneType:
+_________
+
+Variables can be assigned None to indicate "no value" or "not set".
+
+    Example:
+            #Assign and display a None value:
+
+            x = None
+            print(x)
+            
+
+Use type() to see the type of a None value.
+
+    Example:
+            #Assign and print the data type of a None value:
+
+            x = None
+            print(type(x))
+
+Comparing to None:
+__________________
+
+To compare a value to None, use the identity operator is or is not
+
+IS:
+_____
+
+    Example:
+            #Use the identity operator is for comparisons with None:
+
+            result = None
+            if result is None:
+                print("No result yet")
+            else:
+                print("Result is ready")
+IS NOT:
+_______
+
+    Example:
+            Similar example, but using is not instead:
+
+            result = None
+            if result is not None:
+                print("Result is ready")
+            else:
+                print("No result yet")
+
+                
+True or False:
+______________
+
+None evaluates to False in a boolean context.
+
+    Example:
+            Check truthiness:
+
+            print(bool(None))
+
+
+
+Functions returning None:
+_________________________
+
+Functions that do not explicitly return a value return None by default.
+
+    Example:
+            A function without a return statement returns None:
+
+            def myfunc():
+            x = 5
+
+            x = myfunc()
+            print(x)
+
+_______________________________________________________________________________________________________________________________________
+USER INPUT
+_______________________________________________________________________________________________________________________________________
+
+User Input:
+___________
+
+The following example asks for your name, and when you enter a name, it gets printed on the screen:
+
+    Example:
+            Ask for user input:
+
+            print("Enter your name:")
+            name = input()
+            print(f"Hello {name}")
+
+
+Using prompt:
+_____________
+
+input() function has a prompt parameter, message you can put in front of the user input, on the same line:
+
+    Example:
+            Add a message in front of the user input:
+
+            name = input("Enter your name:")
+            print(f"Hello {name}")
+
+
+Multiple Inputs:
+________________
+
+You can add as many inputs as you want, Python will stop executing at each of them, waiting for user input:
+
+    Example:
+            Multiple inputs:
+
+            name = input("Enter your name:")
+            print(f"Hello {name}")
+            fav1 = input("What is your favorite animal:")
+            fav2 = input("What is your favorite color:")
+            fav3 = input("What is your favorite number:")
+            print(f"Do you want a {fav2} {fav1} with {fav3} legs?")
+
+
+Input Number:
+_____________
+
+The input from the user is treated as a string.
+
+You can convert the input into a number with the float() function:
+
+    Example:
+            To find the square root, the input has to be converted into a number:
+
+            x = input("Enter a number:")
+
+            #find the square root of the number:
+            y = math.sqrt(float(x))
+
+            print(f"The square root of {x} is {y}")
+
+
+Validate Input:
+_______________
+
+To avoid getting an error, we can test the input
+
+    Example:
+            Keep asking until you get a number:
+
+            y = True
+            while y == True:
+            x = input("Enter a number:")
+            try:
+                x = float(x);
+                y = False
+            except:
+                print("Wrong input, please try again.")
+            print("Thank you!")
+
+_______________________________________________________________________________________________________________________________________
+FILE HANDLING
+_______________________________________________________________________________________________________________________________________
+  
+File Handling:
+______________
+
+The open() function takes two parameters; filename, and mode.
+
+
+There are four different methods (modes) for opening a file:
+
+    "r" - Read - Default value. Opens a file for reading, error if the file does not exist
+
+    "a" - Append - Opens a file for appending, creates the file if it does not exist
+
+    "w" - Write - Opens a file for writing, creates the file if it does not exist
+
+    "x" - Create - Creates the specified file, returns an error if the file exists
+
+    
+
+In addition you can specify if the file should be handled as binary or text mode:
+
+    "t" - Text - Default value. Text mode
+
+    "b" - Binary - Binary mode (e.g. images)
+
+    
+Syntax:
+_______
+
+To open a file for reading it is enough to specify the name of the file:
+
+    Example:
+            f = open("demofile.txt")
+
+
+The above is the same as below, because "r" (read), and "t" (text) are the default values:
+
+    Example:
+            f = open("demofile.txt", "rt")
+
+
+Open a File on the Server:
+__________________________
+
+Assume we have the following file, located in the same folder as Python:    demofile.txt
+
+    demofile.txt:
+
+            "Hello! Welcome to demofile.txt
+            This file is for testing purposes.
+            Good Luck!"
+
+
+To open the file, use the built-in open() function.
+
+The open() function returns a file object, which has a read() method for reading the content of the file:
+
+    Example:
+            f = open("demofile.txt")
+            print(f.read())
+
+If the file is located in a different location, you will have to specify the file path, like this:
+
+    Example:
+            Open a file on a different location:
+
+            f = open("D:\\myfiles\welcome.txt")
+            print(f.read())
+
+
+Using the with statement:
+_________________________
+
+You can also use the with statement when opening a file.
+Then you do not have to worry about closing your files, the with statement takes care of that.:
+
+    Example:
+            Using the with keyword:
+
+            with open("demofile.txt") as f:
+                print(f.read())
+
+
+Close Files:
+____________
+
+It is a good practice to always close the file when you are done with it.
+If you are not using the with statement, you must write a close statement in order to close the file:
+
+    Example:
+            Close the file when you are finished with it:
+
+            f = open("demofile.txt")
+            print(f.readline())
+            f.close()
+
+Note: You should always close your files. In some cases, due to buffering, changes made to a file may not show until you close the file.
+
+
+Read Only Parts of the File:
+____________________________
+
+By default the read() method returns the whole text, but you can also specify how many characters you want to return:
+
+    Example:
+            Return the 5 first characters of the file:
+
+            with open("demofile.txt") as f:
+                print(f.read(5))
+
+
+Read Lines:
+___________
+
+You can return one line by using the readline() method:
+
+    Example:
+            Read one line of the file:
+
+            with open("demofile.txt") as f:
+                print(f.readline())
+
+
+By calling readline() two times, you can read the two first lines:
+
+    Example:
+            Read two lines of the file:
+
+            with open("demofile.txt") as f:
+                print(f.readline())
+                print(f.readline())
+
+
+By looping through the lines of the file, you can read the whole file, line by line:
+
+    Example:
+            Loop through the file line by line:
+
+            with open("demofile.txt") as f:
+                for x in f:
+                    print(x)
+
+                    
+Write to an Existing File:
+__________________________
+
+To write to an existing file, you must add a parameter to the open() function:
+
+"a" - Append - will append to the end of the file
+
+"w" - Write - will overwrite any existing content
+
+
+    Example:
+            Open the file "demofile.txt" and append content to the file:
+
+            with open("demofile.txt", "a") as f:
+                f.write("Now the file has more content!")
+
+            #open and read the file after the appending:
+
+            with open("demofile.txt") as f:
+                print(f.read())
+
+
+Overwrite Existing Content:
+___________________________
+
+To overwrite the existing content to the file, use the w parameter:
+
+    Example:
+            Open the file "demofile.txt" and overwrite the content:
+
+            with open("demofile.txt", "w") as f:
+                f.write("Woops! I have deleted the content!")
+
+            #open and read the file after the overwriting:
+
+            with open("demofile.txt") as f:
+                print(f.read())
+
+Note: the "w" method will overwrite the entire file.
+
+
+Create a New File:
+__________________
+
+To create a new file in Python, use the open() method, with one of the following parameters:
+
+"x" - Create - will create a file, returns an error if the file exists
+
+"a" - Append - will create a file if the specified file does not exists
+
+"w" - Write - will create a file if the specified file does not exists
+
+
+    Example:
+            Create a new file called "myfile.txt":
+
+            f = open("myfile.txt", "x")   
+
+
+Delete a File:
+______________
+
+To delete a file, you must import the OS module, and run its os.remove() function:
+
+    Example:
+            Remove the file "demofile.txt":
+
+            import os
+            os.remove("demofile.txt")
+
+
+Check if File exist:
+____________________
+
+To avoid getting an error, you might want to check if the file exists before you try to delete it:
+
+    Example:
+            Check if file exists, then delete it:
+
+            import os
+            if os.path.exists("demofile.txt"):
+                os.remove("demofile.txt")
+            else:
+                print("The file does not exist")
+
+
+Delete Folder:
+______________
+
+To delete an entire folder, use the os.rmdir() method:
+
+    Example;
+            Remove the folder "myfolder":
+
+            import os
+            os.rmdir("myfolder")  
+
+
+
+
+
+
+
+

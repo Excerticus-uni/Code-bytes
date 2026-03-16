@@ -1,0 +1,284 @@
+_______________________________________________________________________________________________________________________________________
+Operators
+_______________________________________________________________________________________________________________________________________
+
+
+Python divides the operators in the following groups:
+
+
+- Arithmetic operators
+
+- Assignment operators
+
+- Comparison operators
+
+- Logical operators
+
+- Identity operators
+
+- Membership operators
+
+- Bitwise operators
+
+
+
+
+
+
+Python Arithmetic Operators
+___________________________
+
+
+Arithmetic operators are used with numeric values to perform common mathematical operations:
+
+Operator	    Name	            Example	
+_____________________________________________
++	            Addition	        x + y
+_____________________________________________	
+-	            Subtraction	        x - y
+_____________________________________________
+*	            Multiplication	    x * y
+_____________________________________________
+/	            Division	        x / y	
+_____________________________________________
+%	            Modulus	            x % y	
+_____________________________________________
+**	            Exponentiation	    x ** y	
+_____________________________________________
+//	            Floor division	    x // y	
+_____________________________________________
+
+
+
+
+
+
+
+Python Assignment Operators
+___________________________
+
+
+Assignment operators are used to assign values to variables:
+
+Operator	        Example	        Same As	
+________________________________________________
+=	                x = 5	        x = 5	
+________________________________________________
++=	                x += 3	        x = x + 3	
+________________________________________________
+-=	                x -= 3	        x = x - 3	
+________________________________________________
+*=	                x *= 3	        x = x * 3	
+________________________________________________
+/=	                x /= 3	        x = x / 3	
+________________________________________________
+%=	                x %= 3	        x = x % 3	
+________________________________________________
+//=	                x //= 3	        x = x // 3	
+________________________________________________
+**=	                x **= 3	        x = x ** 3	
+________________________________________________
+&=	                x &= 3	        x = x & 3	
+________________________________________________
+|=	                x |= 3	        x = x | 3	
+________________________________________________
+^=	                x ^= 3	        x = x ^ 3	
+________________________________________________
+>>=	                x >>= 3	        x = x >> 3	
+________________________________________________
+<<=	                x <<= 3	        x = x << 3	
+________________________________________________
+:=	                print(x := 3)	x = 3
+                                    print(x)	
+________________________________________________
+
+
+
+
+
+
+
+
+Python Comparison Operators
+___________________________
+
+
+Comparison operators are used to compare two values:
+
+Operator	    Name	                    Example
+_____________________________________________________
+==	            Equal	                    x == y	
+_____________________________________________________
+!=	            Not equal	                x != y	
+_____________________________________________________
+>	            Greater than	            x > y	
+_____________________________________________________
+<	            Less than	                x < y	
+_____________________________________________________
+>=	            Greater than or equal to	x >= y	
+_____________________________________________________
+<=              Less than or equal to	    x <= y	
+_____________________________________________________
+
+
+
+Python Logical Operators
+________________________
+
+
+
+Logical operators are used to combine conditional statements:
+
+Operator	        Description	                Example	
+______________________________________________________________________
+and 	        Returns True if both 	        x < 5 and  x < 10	
+                statements are true
+______________________________________________________________________
+or	            Returns True if one of 	        x < 5 or x < 4	
+                the statements is true  
+______________________________________________________________________
+not	            Reverse the result, returns     not(x < 5 and x < 10)	
+                False if the result is true
+______________________________________________________________________
+
+
+
+Python Identity Operators
+_________________________
+
+
+Identity operators are used to compare the objects, not if they are equal, 
+but if they are actually the same object, with the same memory location:
+
+
+Operator	         Description	                  Example
+___________________________________________________________________
+is 	            Returns True if both variables        x is y	
+                      are the same object
+___________________________________________________________________
+is not	        Returns True if both variables        x is not y
+                    are not the same object
+___________________________________________________________________
+
+
+
+Python Membership Operators
+___________________________
+
+
+Membership operators are used to test if a sequence is presented in an object:
+
+Operator	                          Description	                     Example
+_____________________________________________________________________________________
+in 	                Returns True if a sequence with the	 specified       x in y	
+                            value is present in the object
+_____________________________________________________________________________________
+not in	            Returns True if a sequence with the specified	     x not in y	
+                            value is not present in the object
+_____________________________________________________________________________________
+
+
+
+
+
+Python Bitwise Operators
+________________________
+
+
+Bitwise operators are used to compare (binary) numbers:
+
+Operator	Name	                Description	                        Example	
+___________________________________________________________________________________
+& 	        AND	                    Sets each bit to 1 if	            x & y	
+                                    both bits are 1
+___________________________________________________________________________________
+|	        OR	                    Sets each bit to 1 if 	            x | y	
+                                    one of two bits is 1    
+___________________________________________________________________________________
+^	        XOR	                    Sets each bit to 1 if only          x ^ y
+                                      on of the two bits is 1
+___________________________________________________________________________________
+~	        NOT	                    Inverts all the bits	~x	
+
+___________________________________________________________________________________
+<<	        Zero fill left shift	Shift left by pushing zeros in      x << 2	
+                                      from the right and let the 
+                                        leftmost bits fall off
+___________________________________________________________________________________
+>>	        Signed right shift	    Shift right by pushing copies of 	x >> 2	
+                                    the leftmost bits in from the left, 
+                                    and let the rightmost bits fall off
+___________________________________________________________________________________
+
+
+
+Operator Precedence
+___________________
+
+
+Operator precedence describes the order in which operations are performed.
+
+
+Parentheses has highest precedence, expressions inside parentheses evaluated first.
+
+    Example:
+
+            Parentheses has highest precedence, expressions inside parentheses evaluated first.
+            print((6 + 3) - (6 + 3))
+
+
+Multiplication * has higher precedence than addition +, and therefore multiplications are evaluated before additions:
+
+    Example:
+
+            print(100 + 5 * 3)
+
+
+
+If two operators have the same precedence, the expression is evaluated from left to right.
+
+
+Addition (+) and subtraction (-) has the same precedence.
+
+    Example:
+
+            print(5 + 4 - 7 + 3)
+
+
+
+
+
+The precedence order is described in the table below, starting with the highest precedence at the top:
+
+
+Operator	    Description	
+_____________________________________________________________
+()	            Parentheses	
+_____________________________________________________________
+**	            Exponentiation	
+_____________________________________________________________
++x  -x  ~x	    Unary plus, unary minus, 
+                    and bitwise NOT
+_____________________________________________________________
+*  /  //  %	    Multiplication, division, 
+                floor division, and modulus
+_____________________________________________________________
++  -	        Addition and subtraction	
+_____________________________________________________________
+<<  >>	        Bitwise left and right shifts
+_____________________________________________________________
+&	            Bitwise AND	
+_____________________________________________________________
+^	            Bitwise XOR	
+_____________________________________________________________
+|	            Bitwise OR	
+_____________________________________________________________
+==  !=  >           
+>=  <  <=       Comparisons, identity,
+is  is not      and membership operators	
+in  not in 	
+_____________________________________________________________
+not	            Logical NOT	
+and	            AND	
+or	            OR	
+_____________________________________________________________

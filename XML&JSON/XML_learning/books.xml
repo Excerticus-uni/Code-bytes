@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+    <bookstore>
+        <book>
+            <title>Harry Potter and the
+Philosopher's Stone</title>
+            <author>J.K. Rowling</author>
+            <publishDate>1997</publishDate>
+            <price>10.99</price>
+        </book>
+<!-- Add two more books similarly -->
+        <book>
+            <title>Harry Potter and the
+Goblet of fire</title>
+            <author>J.K. Rowling</author>
+            <publishDate>2000</publishDate>
+            <price>10.99</price>
+        </book>
+        <book>
+            <title>Rock Paper Scissors</title>
+            <author>Alice Feeney</author>
+            <publishDate>2021</publishDate>
+            <price>9.19</price>
+        </book>
+    </bookstore>

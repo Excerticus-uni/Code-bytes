@@ -1,0 +1,430 @@
+_______________________________________________________________________________________________________________________________________
+String Handling
+_______________________________________________________________________________________________________________________________________           
+
+
+Strings in python surrounded by either single quotations, or double quotations.
+
+'hello' is the same as "hello".
+
+You can display a string literal with the print() function:
+
+    Example:
+
+        print("Hello")
+        print('Hello')
+
+
+Quotes Inside Quotes
+____________________
+
+
+You can use quotes inside a string, as long as they don't match the quotes surrounding the string:
+
+    Example:
+
+            print("It's alright")
+            print("He is called 'Johnny'")
+            print('He is called "Johnny"')
+
+
+Assign String to a Variable
+___________________________
+
+
+Assigning a string to a variable is done with the variable name followed by an equal sign and the string:
+
+    Example:
+
+            a = "Hello"
+            print(a)
+
+
+Multiline Strings
+_________________
+
+
+You can assign a multiline string to a variable by using three double quotes, Or three single quotes:
+
+    Example:
+
+            a = """Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt
+            ut labore et dolore magna aliqua."""
+
+            print(a)
+_______________________________________________________________________________________________________________________________________
+Slicing Strings
+_______________________________________________________________________________________________________________________________________
+
+
+You can return a range of characters by using the slice syntax.
+Specify the start index(inclusive) and the end index(exclusive).
+
+Note: The first character has index 0.
+
+
+    Example:
+
+            b = "Hello, World!"
+            print(b[2:5])
+
+
+Slice From the Start
+____________________
+
+
+By leaving out the start index, the range will start at the first character:
+
+    Example:
+
+            b = "Hello, World!"
+            print(b[:5])
+
+
+Slice To the End
+________________
+
+
+By leaving out the end index, the range will go to the end:
+
+    Example:
+
+            b = "Hello, World!"
+            print(b[2:])
+
+
+Negative Indexing
+_________________
+
+
+Use negative indexes to start the slice from the end of the string:
+
+    Example:
+
+            b = "Hello, World!"
+            print(b[-5:-2])
+
+From: "o" in "World!" (position -5)
+To, but not included: "d" in "World!" (position -2):
+
+_______________________________________________________________________________________________________________________________________
+Modify Strings
+_______________________________________________________________________________________________________________________________________
+
+
+Upper Case
+__________
+
+
+The upper() method returns the string in upper case:
+
+    Example:
+
+            a = "Hello, World!"
+            print(a.upper())
+
+
+Lower Case
+__________
+
+
+The lower() method returns the string in lower case:
+
+    Example:
+
+            a = "Hello, World!"
+            print(a.lower())
+
+
+Remove Whitespace
+_________________
+
+
+Whitespace is the space before and/or after the actual text, and very often you want to remove this space.
+The strip() method removes any whitespace from the beginning or the end:
+
+    Example:
+
+            a = " Hello, World! "
+            print(a.strip()) # returns "Hello, World!"
+
+
+Replace String
+______________
+
+
+The replace() method replaces a string with another string:
+
+    Example:
+
+            a = "Hello, World!"
+            print(a.replace("H", "J"))
+            
+
+Split String
+____________
+
+
+The split() method returns a list where the text between the specified separator becomes the list items.
+
+    Example:
+
+            a = "Hello, World!"
+            print(a.split(",")) # returns ['Hello', ' World!']
+
+            
+String Concatenation
+____________________
+
+
+To concatenate, or combine, two strings you can use the + operator.
+
+Merge variable a with variable b into variable c:
+
+    Example:
+
+
+
+            a = "Hello"
+            b = "World"
+            c = a + b
+            print(c)
+
+To add a space between them, add a " ":
+
+    Example:
+
+            a = "Hello"
+            b = "World"
+            c = a + " " + b
+            print(c)
+
+
+_______________________________________________________________________________________________________________________________________
+String Formatting
+_______________________________________________________________________________________________________________________________________
+
+
+As we learned in the Python Variables chapter, we cannot combine strings and numbers like this:
+
+    Example:
+
+            age = 36
+            #This will produce an error:
+            txt = "My name is John, I am " + age
+            print(txt)
+
+
+F-Strings
+_________
+
+But we can combine strings and numbers by using f-strings or the format() method!
+F-String was introduced in Python 3.6, and is now the preferred way of formatting strings.
+To specify a string as an f-string, simply put an f in front of the string literal, and add curly brackets {} as placeholders for variables and other operations.
+
+
+Create an f-string:
+
+    Example:
+
+            age = 36
+            txt = f"My name is John, I am {age}"
+            print(txt)
+
+
+Placeholders and Modifiers
+__________________________
+
+
+A placeholder can contain variables, operations, functions, and modifiers to format the value.
+
+    Example:
+
+            price = 59
+            txt = f"The price is {price} dollars"
+            print(txt)
+
+
+Modifier
+________
+
+
+A placeholder can include a modifier to format the value.
+A modifier is included by adding a colon : followed by a legal formatting type, like .2f which means fixed point number with 2 decimals:
+
+    Example:
+
+            #Display the price with 2 decimals.
+            price = 59
+            txt = f"The price is {price:.2f} dollars"
+            print(txt)
+
+A placeholder can contain Python code, like math operations:
+
+    Example:
+
+            #Perform a math operation in the placeholder.
+
+            txt = f"The price is {20 * 59} dollars"
+            print(txt)
+
+
+
+
+
+_______________________________________________________________________________________________________________________________________
+Escape Characters
+_______________________________________________________________________________________________________________________________________
+
+
+An escape character is a backslash \ followed by the character you want to insert.
+An example of an illegal character is a double quote inside a string that is surrounded by double quotes:
+
+
+    Example:
+
+            txt = "We are the so-called "Vikings" from the north."
+
+            
+You will get an error if you use double quotes inside a string that is surrounded by double quotes:
+To fix this problem, use the escape character \":
+
+
+    Example:
+
+            txt = "We are the so-called \"Vikings\" from the north."
+
+
+The escape character allows you to use double quotes when you normally would not be allowed:
+
+Escape Characters
+_________________
+
+
+Other escape characters used in Python:
+
+Code	       Result	
+____________________________
+\'	        Single Quote	
+____________________________
+\\	        Backslash	
+____________________________
+\n	        New Line	
+____________________________
+\r	        Carriage Return	
+____________________________
+\t	        Tab	
+____________________________
+\b	        Backspace	
+____________________________
+\f	        Form Feed	
+____________________________
+\ooo	    Octal value	
+____________________________
+\xhh	    Hex value
+____________________________
+
+
+_______________________________________________________________________________________________________________________________________
+String Methods
+_______________________________________________________________________________________________________________________________________
+
+
+Python has a set of built-in methods that you can use on strings.
+Note: All string methods return new values. They do not change the original string.
+
+______________________________________________________________________________________________________________________
+Method	                    Description
+______________________________________________________________________________________________________________________
+capitalize()	            Converts the first character to upper case
+______________________________________________________________________________________________________________________
+casefold()	                Converts string into lower case
+______________________________________________________________________________________________________________________
+center()	                Returns a centered string
+______________________________________________________________________________________________________________________
+count()	                    Returns the number of times a specified value occurs in a string
+______________________________________________________________________________________________________________________
+encode()	                Returns an encoded version of the string
+______________________________________________________________________________________________________________________
+endswith()	                Returns true if the string ends with the specified value
+______________________________________________________________________________________________________________________
+expandtabs()	            Sets the tab size of the string
+______________________________________________________________________________________________________________________
+find()	                    Searches the string for a specified value and returns the position of where it was found
+______________________________________________________________________________________________________________________
+format()	                Formats specified values in a string
+______________________________________________________________________________________________________________________
+format_map()	            Formats specified values in a string
+______________________________________________________________________________________________________________________
+index()	                    Searches the string for a specified value and returns the position of where it was found
+______________________________________________________________________________________________________________________
+isalnum()	                Returns True if all characters in the string are alphanumeric
+______________________________________________________________________________________________________________________
+isalpha()	                Returns True if all characters in the string are in the alphabet
+______________________________________________________________________________________________________________________
+isascii()	                Returns True if all characters in the string are ascii characters
+______________________________________________________________________________________________________________________
+isdecimal()	                Returns True if all characters in the string are decimals
+______________________________________________________________________________________________________________________
+isdigit()	                Returns True if all characters in the string are digits
+______________________________________________________________________________________________________________________
+visidentifier()	            Returns True if the string is an identifier
+______________________________________________________________________________________________________________________
+islower()	                Returns True if all characters in the string are lower case
+______________________________________________________________________________________________________________________
+isnumeric()	                Returns True if all characters in the string are numeric
+______________________________________________________________________________________________________________________
+isprintable()	            Returns True if all characters in the string are printable
+______________________________________________________________________________________________________________________
+isspace()	                Returns True if all characters in the string are whitespaces
+______________________________________________________________________________________________________________________
+istitle()	                Returns True if the string follows the rules of a title
+______________________________________________________________________________________________________________________
+isupper()	                Returns True if all characters in the string are upper case
+______________________________________________________________________________________________________________________
+join()	                    Joins the elements of an iterable to the end of the string
+______________________________________________________________________________________________________________________
+ljust()	                    Returns a left justified version of the string
+______________________________________________________________________________________________________________________
+lower()	                    Converts a string into lower case
+______________________________________________________________________________________________________________________
+lstrip()	                Returns a left trim version of the string
+______________________________________________________________________________________________________________________
+maketrans()	                Returns a translation table to be used in translations
+______________________________________________________________________________________________________________________
+partition()	                Returns a tuple where the string is parted into three parts
+______________________________________________________________________________________________________________________
+replace()	                Returns a string where a specified value is replaced with a specified value
+______________________________________________________________________________________________________________________
+rfind()	                    Searches the string for a specified value and returns the last position of where it was found
+______________________________________________________________________________________________________________________
+rindex()	                Searches the string for a specified value and returns the last position of where it was found
+______________________________________________________________________________________________________________________
+rjust()	                    Returns a right justified version of the string
+______________________________________________________________________________________________________________________
+rpartition()	            Returns a tuple where the string is parted into three parts
+______________________________________________________________________________________________________________________
+rsplit()	                Splits the string at the specified separator, and returns a list
+______________________________________________________________________________________________________________________
+rstrip()	                Returns a right trim version of the string
+______________________________________________________________________________________________________________________
+split()	                    Splits the string at the specified separator, and returns a list
+______________________________________________________________________________________________________________________
+splitlines()	            Splits the string at line breaks and returns a list
+______________________________________________________________________________________________________________________
+startswith()	            Returns true if the string starts with the specified value
+______________________________________________________________________________________________________________________
+strip()	                    Returns a trimmed version of the string
+______________________________________________________________________________________________________________________
+swapcase()	                Swaps cases, lower case becomes upper case and vice versa
+______________________________________________________________________________________________________________________
+title()	                    Converts the first character of each word to upper case
+______________________________________________________________________________________________________________________
+translate()	                Returns a translated string
+______________________________________________________________________________________________________________________
+upper()	                    Converts a string into upper case
+______________________________________________________________________________________________________________________
+zfill()	                    Fills the string with a specified number of 0 values at the beginning
+______________________________________________________________________________________________________________________

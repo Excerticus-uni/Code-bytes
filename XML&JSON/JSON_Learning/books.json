@@ -1,0 +1,22 @@
+{
+    "bookstore": [
+        {
+            "title": "Harry Potter and the Philosopher's Stone",
+            "author": "J.K. Rowling",
+            "publishDate": "1997",
+            "price": 10.99
+        },
+        {
+            "title": "Harry Potter and the Goblet of Fire",
+            "author": "J.K. Rowling",
+            "publishDate": "2000",
+            "price": 10.99
+        },
+        {
+            "title": "Rock Paper Scissors",
+            "author": "Alice Feeney",
+            "publishDate": "2021",
+            "price": 9.19
+        }
+                ]
+}
